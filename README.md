@@ -1,2 +1,2 @@
 # odoo-monema
-Módulo para integrar Odoo con Monema
+Módulo para integrar Odoo con Monema.
