@@ -39,5 +39,5 @@
     ],
     'installable': True,
     'auto_install': False,
-    'images': ['static/description/main_screenshot.png'],
+    'images': ['images/main_screenshot.png'],
 }
