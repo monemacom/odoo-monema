@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.fonema</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block" data-string="Fonema" id="fonema" string="Fonema" data-key="fonema">
+
+                        <h2>Configuración de Fonema</h2>
+                        <div class="row mt16 o_settings_container" id="fonema_setting">
+                            <div class="o_setting_box o_searchable_setting col-12 col-lg-12">
+                                <span>Para poder emplear este módulo es necesario introducir las credenciales en su panel de la centralita > Integraciones > Odoo (ponga el interruptor en On) > Cambiar configuración > Introduzca las credenciales > Salvar cambios.</span>
+                            </div>
+
+                            <div class="o_setting_box o_searchable_setting col-12 col-lg-12">
+                                <group>
+                                    <field name="info_last_connection" readonly="True" placeholder="Aún no se ha establecido conexión con Fonema." modifiers='{"bold": True}'/>
+                                    <field name="info_version" readonly="True" placeholder="..." modifiers='{"bold": True}'/>
+                                </group>
+                            </div>
+
+                            <div class="o_setting_box o_searchable_setting col-12 col-lg-12">
+                                <group>
+                                    <button name="btn_help" string="Documentación" type="object" class="btn-primary" icon="fa-book"/>
+                                </group>
+                            </div>
+                        </div>
+
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="fonema_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'fonema', 'bin_size': False}</field>
+        </record>
+
+        <menuitem id="fonema_config_settings_menu" name="Settings" sequence="0" action="fonema_config_settings_action" groups="base.group_system"/>
+
+    </data>
+</odoo>
